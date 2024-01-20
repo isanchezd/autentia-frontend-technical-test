@@ -25,7 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles/reset.css",
+              "src/styles/vars.css",
+              "src/styles/common.css"
             ],
             "scripts": []
           },
@@ -83,9 +85,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles/reset.css", "src/styles/vars.css", "src/styles/common.css"],
             "scripts": []
           }
         }
