@@ -1,24 +1,14 @@
 
 export class Person {
-  private readonly _name: string;
-  private readonly _lastname: string;
-  private readonly _avatar: string;
+  public readonly id: number;
+  public readonly name: string;
+  public readonly lastname: string;
+  public readonly avatar: string;
 
-  constructor(name: string, lastname: string, avatar: string) {
-    this._name = name;
-    this._lastname = lastname;
-    this._avatar = avatar;
-  }
-
-  get name(): string {
-    return this._name;
-  }
-
-  get lastname(): string {
-    return this._lastname;
-  }
-
-  get avatar(): string {
-    return this._avatar;
+  constructor(id: number, name: string, lastname: string, avatar: string) {
+    this.id = id;
+    this.name = name;
+    this.lastname = lastname;
+    this.avatar = avatar;
   }
 }

@@ -1,12 +1,17 @@
-<div class="list">
-  <div class="row row__border-bottom" *ngFor="let payment of payments">
-    <div class="col">
-      <p>Iván Sánchez</p>
-      <p>This is a payment</p>
-    </div>
-    <div class="col">
-      <p>55</p>
-      <p>Today</p>
+<div *ngIf="payments.length > 0; else elseBlock">
+  <div class="list">
+    <div class="row row__border-bottom" *ngFor="let payment of payments">
+      <div class="col">
+        <p>{{ payment.person.name }} {{ payment.person.lastname }}</p>
+        <p>{{ payment.description }}</p>
+      </div>
+      <div class="col">
+        <p>{{ payment.amount.toString() }}</p>
+        <p>{{ payment.transactionDate }}</p>
+      </div>
     </div>
   </div>
 </div>
+
+<ng-template #elseBlock>No Payments</ng-template>
+

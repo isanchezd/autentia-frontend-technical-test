@@ -11,13 +11,17 @@ describe('PaymentViewComponent', () => {
       imports: [PaymentViewComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(PaymentViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('When payments was previously stored, the list of the payments should be in the DOM', () => {
+
+  })
 });

@@ -1,33 +1,22 @@
+import { Amount } from "./Amount";
 import { Person } from "./Person";
 
 export class Payment {
-  private readonly _person: Person;
-  private readonly _amount: number;
-  private readonly _description: string;
-  private readonly _transactionDate: string;
+  public readonly id: number | null;
+  public readonly person: Person;
+  public readonly amount: Amount;
+  public readonly description: string;
+  public readonly transactionDate: number;
 
-  constructor(person: Person, amount: number, description: string, transactionDate: string) {
-    this._person = person;
-    this._amount = amount;
-    this._description = description;
-    this._transactionDate = transactionDate;
+  constructor(id: number, person: Person, amount: Amount, description: string, transactionDate: number) {
+    this.id = id;
+    this.person = person;
+    this.amount = amount;
+    this.description = description;
+    this.transactionDate = transactionDate;
   }
 
-  get person(): Person {
-    return this._person;
-  }
 
-  get amount(): Number {
-    return this._amount;
-  }
-
-  get description(): string {
-    return this._description;
-  }
-
-  get transactionDate(): string {
-    return this._transactionDate;
-  }
 }
 
 

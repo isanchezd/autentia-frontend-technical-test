@@ -1,14 +1,15 @@
 .list {
   display: flex;
+  flex-direction: column;
   width: 100%
 }
 
 .row {
+  width: inherit;
   display: inherit;
   flex-direction:row;
   justify-content: space-around;
   gap: 0.2rem;
-  width: inherit;
 }
 
 .row__border-bottom {
