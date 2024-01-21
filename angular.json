@@ -27,7 +27,10 @@
             "styles": [
               "src/styles/reset.css",
               "src/styles/vars.css",
-              "src/styles/common.css"
+              "src/styles/layout.css",
+              "src/styles/typography.css",
+              "src/styles/forms.css",
+              "src/styles/buttons.css"
             ],
             "scripts": []
           },
@@ -85,7 +88,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": ["src/styles/reset.css", "src/styles/vars.css", "src/styles/common.css"],
+            "styles": [
+              "src/styles/reset.css",
+              "src/styles/vars.css",
+              "src/styles/layout.css",
+              "src/styles/typography.css",
+              "src/styles/forms.css",
+              "src/styles/buttons.css"
+            ],
             "scripts": []
           }
         }
