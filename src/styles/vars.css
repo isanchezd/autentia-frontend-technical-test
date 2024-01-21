@@ -1,8 +1,13 @@
 :root {
   --color-primary: #004777;
   --color-secondary: #FF7700;
-  --title-text-size: 2rem;
-  --subtitle-text-size: 1.5rem;
-  --paragraph-text-size: 1rem;
-  --text-size: 0.5rem;
+  --color-danger: red;
+  --color-warning: yellow;
+  --color-success: green;
+  --heading-1-text-size: 2.5rem;
+  --heading-2-text-size: 2rem;
+  --heading-3-text-size: 1.75rem;
+  --heading-4-text-size: 1.5rem;
+  --heading-5-text-size: 1.2rem;
+  --paragraph-text-size: 0.5rem;
 }

@@ -1,0 +1,32 @@
+.container-fluid {
+  width: 100%;
+}
+
+.container {
+  width: 90%
+}
+
+
+.col {
+  display:flex;
+  flex-direction: column;
+}
+
+.row {
+  display:flex;
+  flex-direction: row;
+}
+
+.center {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%
+  }
+}
+
+
