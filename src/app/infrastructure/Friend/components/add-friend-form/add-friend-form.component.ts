@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Output, Input, OnInit, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, OnDestroy } from '@angular/core';
 import { FormControl, FormControlStatus, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Subject, distinctUntilChanged, takeUntil } from 'rxjs';
 
@@ -24,7 +24,6 @@ const ERROR_MESSAGES: ErrorMessages = {
   styleUrl: './add-friend-form.component.css'
 })
 export class AddFriendFormComponent implements OnInit, OnDestroy {
-  @Input() isSubmited!: boolean;
   @Output() onFormStatusChange: EventEmitter<FormControlStatus> = new EventEmitter<FormControlStatus>();
   @Output() onValuesChange: EventEmitter<{ name: string, lastname: string }> = new EventEmitter<{ name: string, lastname: string }>()
 

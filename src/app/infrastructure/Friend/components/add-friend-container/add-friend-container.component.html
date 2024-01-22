@@ -1,0 +1,19 @@
+<header class="modal-header modal-header__background-color modal-header__color">
+  <h4>Add Friend</h4>
+</header>
+<section>
+  <app-add-friend-form
+    (onFormStatusChange)="onFormStatusChange($event)"
+    (onValuesChange)="onValuesChange($event)"
+  />
+</section>
+<footer class="modal-footer">
+  <button class="button" (click)="onCancel()">Cancelar</button>
+  <button
+    class="button primary"
+    (click)="onAccept()"
+    [attr.disabled]="isFormValid ? null : ''"
+  >
+    OK
+  </button>
+</footer>

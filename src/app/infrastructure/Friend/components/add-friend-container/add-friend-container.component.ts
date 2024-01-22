@@ -1,6 +1,5 @@
-import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalVisibilityHandlerService } from '../../../services/modal-visibility-handler.service';
-import { Subject, takeUntil } from 'rxjs';
 import { AddFriendFormComponent } from '../add-friend-form/add-friend-form.component';
 import { FormControlStatus } from '@angular/forms';
 import { addFriend } from '../../../../application/addFriend';
@@ -13,44 +12,24 @@ enum FORM_STATUS  {
 }
 
 @Component({
-  selector: 'app-add-friend-modal',
+  selector: 'app-add-friend-container',
   standalone: true,
   imports: [AddFriendFormComponent],
-  templateUrl: './add-friend-modal.component.html',
-  styleUrl: './add-friend-modal.component.css'
+  templateUrl: './add-friend-container.component.html',
+  styleUrl: './add-friend-container.component.css'
 })
-export class AddFriendModalComponent implements OnInit, OnDestroy {
-  public isSubmited: boolean = false;
+export class AddFriendContainerComponent {
   private _formStatus: FormControlStatus;
   private _formValues!: {name: string, lastname: string};
-  private _show: boolean
   private _modalVisibilityHandler: ModalVisibilityHandlerService
-  private _destroyed$: Subject<void> = new Subject<void>();
 
   constructor(modalvisibilityHandler: ModalVisibilityHandlerService) {
     this._modalVisibilityHandler = modalvisibilityHandler;
     this._formStatus = FORM_STATUS.INVALID;
-    this._show = false;
-  }
-
-  public get show(): boolean {
-    return this._show
   }
 
   public get isFormValid() :boolean {
-    console.log(this._formStatus)
     return this._formStatus === FORM_STATUS.VALID;
-  }
-
-  public ngOnInit(): void {
-    this._modalVisibilityHandler.subject
-    .pipe(takeUntil(this._destroyed$))
-    .subscribe(value => this._show = value)
-  }
-
-  public ngOnDestroy(): void {
-    this._destroyed$.next();
-    this._destroyed$.complete();
   }
 
   public onCancel(): void {
