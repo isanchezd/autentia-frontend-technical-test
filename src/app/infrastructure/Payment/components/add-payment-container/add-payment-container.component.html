@@ -1,0 +1,19 @@
+<header class="modal-header bg-primary color-light">
+  <h4>Add Payment</h4>
+</header>
+<section>
+  <app-add-payment-form
+    (onFormStatusChange)="onFormStatusChange($event)"
+    (onValuesChange)="onValuesChange($event)"
+  />
+</section>
+<footer class="modal-footer">
+  <button class="button" (click)="onCancel()">Cancelar</button>
+  <button
+    class="button primary"
+    (click)="onAccept()"
+    [attr.disabled]="isFormValid ? null : ''"
+  >
+    OK
+  </button>
+</footer>

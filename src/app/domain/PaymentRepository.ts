@@ -1,5 +1,6 @@
 import { Payment } from "./Payment";
 
 export interface PaymentRepository {
-  getPayments: () => Payment[]
+  getPayments: () => Payment[],
+  addPayment: (newPayment: Payment) => Payment
 }

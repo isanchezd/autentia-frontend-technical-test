@@ -51,25 +51,7 @@ input[type="button"]:disabled {
   color: #666666;
   pointer-events: none;
 }
-/* Extras */
-.primary {
-  color: #fff;
-  border-color: var(--color-secondary);
-  background-color: var(--color-secondary);
-}
-.primary:hover,
-.primary:focus {
-  color: #fff;
-  border-color: var(--color-secondary);
-  background-color: var(--color-secondary);
-}
-.primary:disabled {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  pointer-events: none;
 
-}
 
 .round {
   border-radius: 1.25rem;

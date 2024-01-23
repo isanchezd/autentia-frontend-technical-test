@@ -1,0 +1,34 @@
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.color-light {
+  color: #FFF;
+}
+
+.color-dark {
+  color: #000;
+}
+
+.primary {
+  color: #fff;
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+}
+.primary:hover,
+.primary:focus {
+  color: #fff;
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+}
+.primary:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  pointer-events: none;
+
+}
