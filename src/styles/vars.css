@@ -1,6 +1,8 @@
 :root {
   --color-primary: #004777;
   --color-secondary: #FF7700;
+  --color-light: #FFF;
+  --color-dark: #000;
   --color-danger: red;
   --color-warning: yellow;
   --color-success: green;

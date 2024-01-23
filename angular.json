@@ -30,7 +30,9 @@
               "src/styles/layout.css",
               "src/styles/typography.css",
               "src/styles/forms.css",
-              "src/styles/buttons.css"
+              "src/styles/modals.css",
+              "src/styles/buttons.css",
+              "src/styles/colors.css"
             ],
             "scripts": []
           },
@@ -94,7 +96,9 @@
               "src/styles/layout.css",
               "src/styles/typography.css",
               "src/styles/forms.css",
-              "src/styles/buttons.css"
+              "src/styles/modals.css",
+              "src/styles/buttons.css",
+              "src/styles/colors.css"
             ],
             "scripts": []
           }

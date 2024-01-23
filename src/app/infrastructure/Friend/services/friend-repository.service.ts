@@ -7,6 +7,30 @@ const KEY_STORAGE = 'friends'
 @Injectable()
 export class FriendRepositoryService implements FriendRepository {
 
+  public getFriends() {
+    let friends: Friend[] = []
+
+    if (sessionStorage.getItem(KEY_STORAGE)) {
+      const friendsStoraged = JSON.parse(sessionStorage.getItem(KEY_STORAGE) as string);
+      friends = [...friendsStoraged];
+    }
+    return friends;
+  }
+
+  public getFriend(id: number) {
+    let friend: Friend | null = null;
+
+    if (sessionStorage.getItem(KEY_STORAGE)) {
+      const friends = this.getFriends();
+      const friendSearched = friends.find(friendItem => friendItem.id === id)
+      friend = friendSearched ? friendSearched : null;
+    }
+
+    return friend;
+  }
+
+
+
   public addFriend(newFriend: Friend) {
     if (!sessionStorage.getItem(KEY_STORAGE)) {
       sessionStorage.setItem(KEY_STORAGE, JSON.stringify([]))
@@ -20,4 +44,5 @@ export class FriendRepositoryService implements FriendRepository {
 
     return newFriend;
   }
+
 }

@@ -2,18 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, Output, OnInit, EventEmitter, OnDestroy } from '@angular/core';
 import { FormControl, FormControlStatus, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Subject, distinctUntilChanged, takeUntil } from 'rxjs';
+import { getErrorMessage } from '../../../Common/helpers/form';
 
 const friendFormConfig = {
   name: new FormControl('', [Validators.required]),
   lastname: new FormControl('', [Validators.required])
-}
-
-interface ErrorMessages {
-  [key: string]: string;
-}
-
-const ERROR_MESSAGES: ErrorMessages = {
-  required: 'This field is required'
 }
 
 @Component({
@@ -43,24 +36,15 @@ export class AddFriendFormComponent implements OnInit, OnDestroy {
         name: this.friendForm.get('name')?.value,
         lastname: this.friendForm.get('lastname')?.value
       }));
+  }
 
+  public getErrorMessage(errors: ValidationErrors | null | undefined): string {
+    return getErrorMessage(errors);
   }
 
   public ngOnDestroy(): void {
     this._destroyed$.next();
     this._destroyed$.complete();
-  }
-
-  public getErrorMessage(errors: ValidationErrors | null | undefined) {
-    let message: string = '';
-
-    if (errors) {
-      const keys = Object.keys(errors)
-      const firstKey = keys[0];
-      message = ERROR_MESSAGES[firstKey];
-    }
-
-    return message;
   }
 
 }

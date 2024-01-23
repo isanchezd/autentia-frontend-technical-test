@@ -5,11 +5,8 @@ import { FormControlStatus } from '@angular/forms';
 import { addFriend } from '../../../../application/addFriend';
 import { FriendRepositoryService } from '../../services/friend-repository.service';
 import { Friend } from '../../../../domain/Friend';
+import { FORM_STATUS } from '../../../Common/enums/FormStatus';
 
-enum FORM_STATUS  {
-  VALID = 'VALID',
-  INVALID = 'INVALID'
-}
 
 @Component({
   selector: 'app-add-friend-container',

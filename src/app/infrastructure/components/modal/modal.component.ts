@@ -17,8 +17,7 @@ export class ModalComponent implements OnInit {
   private _config!: ModalConfig
   private _destroyed$: Subject<void> = new Subject<void>();
 
-  constructor(private _modalVisibilityHandler: ModalVisibilityHandlerService, private injector: Injector) {
-  }
+  constructor(private _modalVisibilityHandler: ModalVisibilityHandlerService, private injector: Injector) {}
 
   public get show(): boolean {
     return this._config.status
