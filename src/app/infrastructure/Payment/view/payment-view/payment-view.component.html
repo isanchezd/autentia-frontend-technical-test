@@ -1,6 +1,6 @@
 <div *ngIf="payments.length > 0; else elseBlock">
   <div class="list">
-    <div class="row row__border-bottom" *ngFor="let payment of payments">
+    <div class="row row__border" *ngFor="let payment of payments">
       <div class="col">
         <p>{{ payment.friend.name }} {{ payment.friend.lastname }}</p>
         <p>{{ payment.description }}</p>

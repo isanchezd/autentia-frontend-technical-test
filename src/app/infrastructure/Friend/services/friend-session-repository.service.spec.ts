@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FriendRepositoryService } from './friend-repository.service';
+import { FriendRepositoryService } from './friend-session-repository.service';
 
 describe('FriendRepositoryService', () => {
   let service: FriendRepositoryService;

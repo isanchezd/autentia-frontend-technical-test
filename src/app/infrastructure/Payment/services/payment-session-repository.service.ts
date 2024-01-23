@@ -5,7 +5,7 @@ import { Payment } from '../../../domain/Payment';
 const KEY_STORAGE = 'payments';
 
 @Injectable()
-export class PaymentLocalStorageRepositoryService implements PaymentRepository {
+export class PaymentSessionRepositoryService implements PaymentRepository {
 
   public getPayments() {
     let payments: Payment[] = []

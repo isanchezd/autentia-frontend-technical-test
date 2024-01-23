@@ -3,25 +3,25 @@ import { ModalVisibilityHandlerService } from '../../../services/modal-visibilit
 import { AddFriendFormComponent } from '../add-friend-form/add-friend-form.component';
 import { FormControlStatus } from '@angular/forms';
 import { addFriend } from '../../../../application/addFriend';
-import { FriendRepositoryService } from '../../services/friend-repository.service';
+import { FriendSessionRepositoryService } from '../../services/friend-session-repository.service';
 import { Friend } from '../../../../domain/Friend';
 import { FORM_STATUS } from '../../../Common/enums/FormStatus';
+import { AppStore } from '../../../store/app.store';
 
 
 @Component({
   selector: 'app-add-friend-container',
   standalone: true,
   imports: [AddFriendFormComponent],
+  providers: [],
   templateUrl: './add-friend-container.component.html',
   styleUrl: './add-friend-container.component.css'
 })
 export class AddFriendContainerComponent {
   private _formStatus: FormControlStatus;
   private _formValues!: {name: string, lastname: string};
-  private _modalVisibilityHandler: ModalVisibilityHandlerService
 
-  constructor(modalvisibilityHandler: ModalVisibilityHandlerService) {
-    this._modalVisibilityHandler = modalvisibilityHandler;
+  constructor(private _modalvisibilityHandler: ModalVisibilityHandlerService, private _store: AppStore) {
     this._formStatus = FORM_STATUS.INVALID;
   }
 
@@ -30,7 +30,7 @@ export class AddFriendContainerComponent {
   }
 
   public onCancel(): void {
-    this._modalVisibilityHandler.hide();
+    this._modalvisibilityHandler.hide();
   }
 
   public onAccept(): void {
@@ -38,14 +38,13 @@ export class AddFriendContainerComponent {
       const newId = new Date().getTime();
       try {
         const newFriend = new Friend(newId, this._formValues.name, this._formValues.lastname);
-        addFriend(newFriend, new FriendRepositoryService())
+        this._store.addFriend(addFriend(newFriend, new FriendSessionRepositoryService()))
       } catch(error) {
         console.error(error)
         alert(error)
       } finally {
-        this._modalVisibilityHandler.hide();
+        this._modalvisibilityHandler.hide();
       }
-
     }
   }
 

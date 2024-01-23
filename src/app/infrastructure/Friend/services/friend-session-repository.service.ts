@@ -5,7 +5,7 @@ import { FriendRepository } from '../../../domain/FriendRepository';
 const KEY_STORAGE = 'friends'
 
 @Injectable()
-export class FriendRepositoryService implements FriendRepository {
+export class FriendSessionRepositoryService implements FriendRepository {
 
   public getFriends() {
     let friends: Friend[] = []
