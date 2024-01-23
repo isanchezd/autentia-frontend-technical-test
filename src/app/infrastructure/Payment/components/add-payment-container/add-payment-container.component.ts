@@ -4,25 +4,27 @@ import { FormControlStatus } from '@angular/forms';
 import { ModalVisibilityHandlerService } from '../../../services/modal-visibility-handler.service';
 import { FORM_STATUS } from '../../../Common/enums/FormStatus';
 import { PaymentFormValues } from '../PaymentFormValues';
-import { FriendRepositoryService } from '../../../Friend/services/friend-repository.service';
+import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
 import { getFriend } from '../../../../application/getFriend';
 import { Amount } from '../../../../domain/Amount';
 import { Payment } from '../../../../domain/Payment';
 import addPayment from '../../../../application/addPayment';
-import { PaymentLocalStorageRepositoryService } from '../../services/payment-local-storage-repository.service';
+import { PaymentSessionRepositoryService } from '../../services/payment-session-repository.service';
+import { AppStore } from '../../../store/app.store';
 
 @Component({
   selector: 'app-add-payment-container',
   standalone: true,
   imports: [AddPaymentFormComponent],
+  providers: [],
   templateUrl: './add-payment-container.component.html',
   styleUrl: './add-payment-container.component.css'
 })
 export class AddPaymentContainerComponent {
-  private _formStatus: FormControlStatus;
+  private _formStatus: string;
   private _formValues!: PaymentFormValues;
 
-  constructor(private _modalvisibilityHandler: ModalVisibilityHandlerService) {
+  constructor(private _modalvisibilityHandler: ModalVisibilityHandlerService, private _store: AppStore) {
     this._formStatus = FORM_STATUS.INVALID;
   }
 
@@ -36,15 +38,15 @@ export class AddPaymentContainerComponent {
 
   public onAccept(): void {
     if (this._formStatus === FORM_STATUS.VALID) {
-      const friend = getFriend(new FriendRepositoryService(), Number(this._formValues.friend));
-      if(!friend) {
+      const friend = getFriend(new FriendSessionRepositoryService(), Number(this._formValues.friend));
+      if (!friend) {
         console.error('Not Friend encountered')
         return;
       }
       const id = new Date().getTime();
       const amount = new Amount(Number(this._formValues.amount), '€');
       const payment = new Payment(id, friend, amount, this._formValues.description, new Date().getTime())
-      addPayment(new PaymentLocalStorageRepositoryService(), payment)
+      this._store.addPayment(addPayment(new PaymentSessionRepositoryService(), payment))
       this._modalvisibilityHandler.hide();
     }
   }

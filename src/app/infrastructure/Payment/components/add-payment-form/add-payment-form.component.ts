@@ -6,15 +6,13 @@ import { CommonModule } from '@angular/common';
 import { PaymentFormValues } from '../PaymentFormValues';
 import { Friend } from '../../../../domain/Friend';
 import { getFriends } from '../../../../application/getFriends';
-import { FriendRepositoryService } from '../../../Friend/services/friend-repository.service';
+import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
 
 const paymentFormConfig = {
   friend: new FormControl('', Validators.required),
   amount: new FormControl('', [Validators.required]),
   description: new FormControl('', [Validators.required])
 }
-
-
 
 @Component({
   selector: 'app-add-payment-form',
@@ -49,7 +47,7 @@ export class AddPaymentFormComponent {
         amount: this.form.get('amount')?.value,
         description: this.form.get('description')?.value
       }));
-    this._friends = [...getFriends(new FriendRepositoryService())]
+    this._friends = [...getFriends(new FriendSessionRepositoryService())]
   }
 
   public getErrorMessage(errors: ValidationErrors | null | undefined): string {
