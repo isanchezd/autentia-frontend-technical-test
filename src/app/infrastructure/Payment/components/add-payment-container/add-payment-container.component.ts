@@ -11,6 +11,7 @@ import { Payment } from '../../../../domain/Payment';
 import addPayment from '../../../../application/addPayment';
 import { PaymentSessionRepositoryService } from '../../services/payment-session-repository.service';
 import { AppStore } from '../../../store/app.store';
+import CurrencyCodes from '../../../../domain/CurrencyCodes';
 
 @Component({
   selector: 'app-add-payment-container',
@@ -44,7 +45,7 @@ export class AddPaymentContainerComponent {
         return;
       }
       const id = new Date().getTime();
-      const amount = new Amount(Number(this._formValues.amount), '€');
+      const amount = new Amount(Number(this._formValues.amount), CurrencyCodes.EUR);
       const payment = new Payment(id, friend, amount, this._formValues.description, new Date().getTime())
       this._store.addPayment(addPayment(new PaymentSessionRepositoryService(), payment))
       this._modalvisibilityHandler.hide();

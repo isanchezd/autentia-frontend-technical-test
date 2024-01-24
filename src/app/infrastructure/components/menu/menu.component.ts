@@ -22,8 +22,11 @@ export class MenuComponent {
     this._modalVisibilityHandler.show(AddFriendContainerComponent);
   }
 
-  public  onClickAddPayment() {
+  public onClickAddPayment() {
     this._modalVisibilityHandler.show(AddPaymentContainerComponent);
+  }
+
+  public onClickSeeBalance() {
 
   }
 }

@@ -6,6 +6,10 @@
   background-color: var(--color-secondary);
 }
 
+.bg-neutral {
+  background-color: var(--color-grey);
+}
+
 .color-light {
   color: #FFF;
 }
@@ -32,3 +36,9 @@
   pointer-events: none;
 
 }
+
+.border, .border-y, .border-x {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
+

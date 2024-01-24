@@ -1,7 +1,8 @@
 import { Amount } from "../domain/Amount"
+import CurrencyCodes from "../domain/CurrencyCodes"
 import { Payment } from "../domain/Payment"
 import { PaymentRepository } from "../domain/PaymentRepository"
-import { Person } from "../domain/Person"
+import { Friend } from "../domain/Friend"
 import { getPayments } from "./getPayments"
 
 describe('GetPaymentsUseCase', () => {
@@ -10,6 +11,9 @@ describe('GetPaymentsUseCase', () => {
     const mockPaymentRepository: PaymentRepository = {
       getPayments() {
         return []
+      },
+      addPayment(payment: Payment) {
+        return payment
       }
     }
     const payments = getPayments(mockPaymentRepository)
@@ -22,11 +26,14 @@ describe('GetPaymentsUseCase', () => {
         return [
           new Payment(
             1,
-            new Person(new Date().getTime(), 'Iván', 'Sanchez', ''),
-            new Amount(5.74, '€'), 'Test',
+            new Friend(new Date().getTime(), 'Iván', 'Sanchez'),
+            new Amount(5.74, CurrencyCodes.EUR), 'Test',
             new Date().getTime()
           )
         ]
+      },
+      addPayment(payment: Payment) {
+        return payment
       }
     };
 
@@ -41,16 +48,19 @@ describe('GetPaymentsUseCase', () => {
         return [
           new Payment(
             1,
-            new Person(new Date().getTime(), 'Iván', 'Sanchez', ''),
-            new Amount(5.74, '€'), 'Test',
+            new Friend(new Date().getTime(), 'Iván', 'Sanchez'),
+            new Amount(5.74, CurrencyCodes.EUR), 'Test',
             1705776752
           ),
           new Payment(
             2,
-            new Person(new Date().getTime(), 'Iván', 'Sanchez', ''),
-            new Amount(5.74, '€'), 'Test',
+            new Friend(new Date().getTime(), 'Iván', 'Sanchez'),
+            new Amount(5.74, CurrencyCodes.EUR), 'Test',
             1674237110)
         ]
+      },
+      addPayment(payment: Payment) {
+        return payment
       }
     };
 

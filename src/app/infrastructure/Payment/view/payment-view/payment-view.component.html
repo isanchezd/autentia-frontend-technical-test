@@ -1,17 +1,7 @@
-<div *ngIf="payments.length > 0; else elseBlock">
-  <div class="list">
-    <div class="row row__border" *ngFor="let payment of payments">
-      <div class="col">
-        <p>{{ payment.friend.name }} {{ payment.friend.lastname }}</p>
-        <p>{{ payment.description }}</p>
-      </div>
-      <div class="col">
-        <p>{{ payment.amount.toString() }}</p>
-        <p>{{ payment.transactionDate }}</p>
-      </div>
-    </div>
-  </div>
+<div class="center-x" *ngIf="payments.length > 0; else elseBlock">
+  <app-payment-list [payments]="payments"/>
 </div>
 
-<ng-template #elseBlock>No Payments</ng-template>
-
+<ng-template #elseBlock>
+  <div class="">No payments registered</div>
+</ng-template>

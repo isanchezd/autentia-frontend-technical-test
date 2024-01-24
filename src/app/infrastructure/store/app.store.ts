@@ -36,7 +36,7 @@ export class AppStore {
   public addFriend(friend: Friend) {
     const currentState = this._state.value;
     this._state.next({
-      friends: [...currentState.friends, friend],
+      friends: [friend, ...currentState.friends ],
       payments: [...currentState.payments]
     })
   }
@@ -45,7 +45,7 @@ export class AppStore {
     const currentState = this.state.value;
     this.state.next({
       friends: [...currentState.friends],
-      payments: [...currentState.payments, payment]
+      payments: [payment, ...currentState.payments ]
     })
   }
 
