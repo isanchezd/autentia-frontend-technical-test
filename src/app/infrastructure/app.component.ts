@@ -28,6 +28,5 @@ export class AppComponent implements OnInit {
       friends: getFriends(new FriendSessionRepositoryService()),
       payments: getPayments(new PaymentSessionRepositoryService())
     }
-    this._store.state.subscribe(data => console.log(data))
   }
 }

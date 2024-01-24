@@ -21,18 +21,8 @@
   grid-area: header;
 }
 
-.header__background-color {
-  background-color: var(--color-primary);
-}
-
 .footer {
   grid-area: footer;
 }
 
-.footer__background-color {
-  background-color: var(--color-primary);
-}
 
-.payments-wrapper {
-  width:70%;
-}

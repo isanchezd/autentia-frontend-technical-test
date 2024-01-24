@@ -6,8 +6,4 @@ export class Amount {
     this.amount = amount;
     this.currency = currency;
   }
-
-  public toString(): string {
-    return `${this.amount} ${this.currency}`
-  }
 }

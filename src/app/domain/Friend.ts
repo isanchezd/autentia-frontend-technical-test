@@ -17,6 +17,7 @@ export class Friend {
     this.name = name;
     this.lastname = lastname;
   }
+
 }
 
 function isNameValid(name: string) {
