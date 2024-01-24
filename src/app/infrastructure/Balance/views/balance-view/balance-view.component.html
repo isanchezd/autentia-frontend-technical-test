@@ -1,1 +1,7 @@
-<p>balance-view works!</p>
+<div class="center-x" *ngIf="balances.length > 0; else elseBlock">
+  <app-balance-list [balances]="balances"/>
+</div>
+
+<ng-template #elseBlock>
+  <div class="">No Balance exist</div>
+</ng-template>

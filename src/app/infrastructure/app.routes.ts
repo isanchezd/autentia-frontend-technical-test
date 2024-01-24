@@ -3,5 +3,6 @@ import { PaymentViewComponent } from './Payment/view/payment-view/payment-view.c
 
 export const routes: Routes = [
   { path: '', component: PaymentViewComponent },
+  { path: 'balance', loadComponent: () => import('./Balance/views/balance-view/balance-view.component').then(component => component.BalanceViewComponent) }
 
 ];
