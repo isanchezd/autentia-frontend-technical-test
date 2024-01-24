@@ -8,10 +8,11 @@ export class PaymentDatePipe implements PipeTransform {
 
   transform(value: number): string {
     const currentTimestamp = Math.floor(Date.now() / 1000); // Obtener el timestamp actual en segundos
-    const differenceInSeconds = currentTimestamp - value;
+    const valueTimeStamp = Math.floor(value / 1000);
+    const differenceInSeconds = currentTimestamp - valueTimeStamp;
     const dayInSeconds = differenceInSeconds * 3600 * 24;
 
-    if (differenceInSeconds > 60) {
+    if (differenceInSeconds < 60) {
       return `${differenceInSeconds} ${differenceInSeconds === 1 ? 'second' : 'seconds'}`;
     }
 
