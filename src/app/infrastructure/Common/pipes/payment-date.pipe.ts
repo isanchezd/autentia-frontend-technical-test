@@ -23,13 +23,7 @@ export class PaymentDatePipe implements PipeTransform {
 
     if (differenceInSeconds > 3600 && differenceInSeconds < dayInSeconds)  {
       const hours = Math.floor(differenceInSeconds / 3600);
-      const remainingMinutes = Math.floor((differenceInSeconds % 3600) / 60);
-
-      if (remainingMinutes === 0) {
-        return `${hours} ${hours === 1 ? 'hour' : 'hours'}`;
-      } else {
-        return `${hours} ${hours === 1 ? 'hour' : 'hours'}, ${remainingMinutes} ${remainingMinutes === 1 ? 'minute' : 'minutes'}`;
-      }
+      return `${hours} ${hours === 1 ? 'hour' : 'hours'}`;
     }
 
     return `${new Date(value).toLocaleDateString()}`
