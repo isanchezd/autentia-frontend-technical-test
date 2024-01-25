@@ -31,6 +31,7 @@
               "src/styles/typography.css",
               "src/styles/forms.css",
               "src/styles/modals.css",
+              "src/styles/tables.css",
               "src/styles/buttons.css",
               "src/styles/colors.css"
             ],
@@ -97,7 +98,8 @@
               "src/styles/typography.css",
               "src/styles/forms.css",
               "src/styles/modals.css",
-              "src/styles/buttons.css",
+              "src/styles/tables.css",
+,             "src/styles/buttons.css",
               "src/styles/colors.css"
             ],
             "scripts": []

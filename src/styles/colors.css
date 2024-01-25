@@ -18,6 +18,14 @@
   color: #000;
 }
 
+.success {
+  color: var(--color-success);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
 .primary {
   color: #fff;
   border-color: var(--color-secondary);
@@ -34,7 +42,28 @@
   background-color: #cccccc;
   color: #666666;
   pointer-events: none;
+}
 
+
+.error input {
+  color: var(--color-danger);
+}
+
+.error input::placeholder {
+  color: var(--color-danger);
+}
+
+.error span {
+  color: var(--color-danger);
+}
+
+.error label {
+  color: var(--color-danger);
+}
+
+.error select {
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
 }
 
 .border, .border-y, .border-x {

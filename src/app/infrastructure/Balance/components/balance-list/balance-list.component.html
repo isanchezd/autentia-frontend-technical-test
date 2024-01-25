@@ -1,0 +1,14 @@
+<table class="container table border">
+  <thead>
+    <tr>
+      <th class="text-bold pd-1">Friend</th>
+      <th class="text-bold pd-1">Resume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-y" *ngFor="let balance of balances">
+      <td class="text-center overflow-text pd-1">{{balance.friend | fullname}}</td>
+      <td class="text-center overflow-text pd-1" [ngClass]="balance.resume.amount >= 9 ? 'success' : 'danger'">{{balance.resume | amount}}</td>
+    </tr>
+  </tbody>
+</table>

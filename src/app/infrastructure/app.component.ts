@@ -10,11 +10,12 @@ import { getFriends } from '../application/getFriends';
 import { FriendSessionRepositoryService } from './Friend/services/friend-session-repository.service';
 import { getPayments } from '../application/getPayments';
 import { PaymentSessionRepositoryService } from './Payment/services/payment-session-repository.service';
+import { BalanceViewComponent } from './Balance/views/balance-view/balance-view.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, MenuComponent, PaymentViewComponent, ModalComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, MenuComponent, PaymentViewComponent, BalanceViewComponent, ModalComponent],
   providers: [AppStore],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
