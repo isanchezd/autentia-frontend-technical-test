@@ -1,6 +1,8 @@
 import { FriendRepository } from "../domain/FriendRepository";
 import { PaymentRepository } from "../domain/PaymentRepository";
 import { Balance } from "../domain/Balance";
+import CurrencyCodes from "../domain/CurrencyCodes";
+import { Amount } from "../domain/Amount";
 
 
 export default function getBalances(paymentRepository: PaymentRepository, friendRepository: FriendRepository): Balance[] {
@@ -9,7 +11,8 @@ export default function getBalances(paymentRepository: PaymentRepository, friend
 
     const balance: Balance[] = friends.map(friend => {
       const paymentsFromFriend = payments.filter(payment => payment.friend.id === friend.id);
-      const resume: number = paymentsFromFriend.reduce((accum, current) => accum + current.amount.amount, 0);
+      const total: number = paymentsFromFriend.reduce((accum, current) => accum + current.amount.amount, 0);
+      const resume = new Amount(total, CurrencyCodes.EUR);
 
       return {
         friend,

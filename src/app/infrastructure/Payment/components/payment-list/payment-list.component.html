@@ -11,7 +11,7 @@
     <tr class="border-y" *ngFor="let payment of payments">
       <td class="text-center overflow-text pd-1">{{payment.friend | fullname}}</td>
       <td class="text-center overflow-text pd-1">{{payment.description}}</td>
-      <td class="text-center overflow-text pd-1">{{payment.amount | amount}}</td>
+      <td class="text-center overflow-text pd-1" [ngClass]="payment.amount.amount >= 9 ? 'success' : 'danger'">{{payment.amount | amount}}</td>
       <td class="text-center overflow-text pd-1" >{{payment.transactionDate | paymentDate}}</td>
     </tr>
   </tbody>
