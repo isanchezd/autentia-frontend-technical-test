@@ -1,0 +1,7 @@
+<div class="center-x">
+    @if(payments.length > 0) {
+        <app-payment-list [payments]="payments" />
+    } @else {
+        <div class="">No payments registered</div>
+    }
+</div>

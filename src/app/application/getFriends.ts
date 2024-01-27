@@ -1,4 +1,4 @@
-import { FriendRepository } from "../domain/FriendRepository";
+import { FriendRepository } from "../domain/Friend/FriendRepository";
 
 export function getFriends(friendRepository: FriendRepository) {
   const payments = friendRepository.getFriends();

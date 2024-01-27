@@ -1,31 +1,30 @@
 .modal {
-  position: absolute;
-  top: 25%;
-  width:350px;
+    position: absolute;
+    top: 25%;
+    width: 350px;
 }
 
 .modal-header {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 .modal-header__background-color {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 
 .modal-header__color {
-  color: #fff;
+    color: #fff;
 }
 
-
 .modal-footer {
-  display:flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 576px) {
-  .modal {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-  }
+    .modal {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
 }

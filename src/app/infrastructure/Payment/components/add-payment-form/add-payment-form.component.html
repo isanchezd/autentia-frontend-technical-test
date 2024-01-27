@@ -3,9 +3,13 @@
     <label>Friend (*)</label>
     <select id="friend" formControlName="friend">
       <option>Seleccione un amigo</option>
-      <option *ngFor="let friend of friends" value={{friend.id}}>{{friend.name}}</option>
+      @for (friend of friends; track friend.id) {
+        <option  value={{friend.id}}>{{friend.name}}</option>
+      }
     </select>
-    <span *ngIf="form.get('friend')?.invalid && form.get('friend')?.touched">{{getErrorMessage(form.get('friend')?.errors)}}</span>
+    @if(form.get('friend')?.invalid && form.get('friend')?.touched) {
+      <span>{{getErrorMessage(form.get('friend')?.errors)}}</span>
+    }
   </div>
 
   <div class="form-group" [ngClass]="{'error' : form.get('amount')?.invalid && form.get('amount')?.touched }">
@@ -13,12 +17,16 @@
     <div class="row center-y">
       <input type="number" id="amount" formControlName="amount" placeholder="12.75" />
     </div>
-    <span *ngIf="form.get('amount')?.invalid && form.get('amount')?.touched">{{getErrorMessage(form.get('amount')?.errors)}}</span>
+    @if(form.get('amount')?.invalid && form.get('amount')?.touched) {
+      <span>{{getErrorMessage(form.get('amount')?.errors)}}</span>
+    }
   </div>
 
   <div class="form-group" [ngClass]="{'error': form.get('description')?.invalid && form.get('description')?.touched }">
     <label>Description (*)</label>
     <input type="text" id="name" formControlName="description" placeholder="beers"/>
-    <span *ngIf="form.get('description')?.invalid && form.get('description')?.touched">{{getErrorMessage(form.get('description')?.errors)}}</span>
+    @if(form.get('description')?.invalid && form.get('description')?.touched) {
+      <span>{{getErrorMessage(form.get('description')?.errors)}}</span>
+    }
   </div>
 </form>

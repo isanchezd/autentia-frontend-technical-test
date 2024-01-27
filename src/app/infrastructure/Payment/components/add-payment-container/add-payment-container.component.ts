@@ -6,12 +6,12 @@ import { FORM_STATUS } from '../../../Common/enums/FormStatus';
 import { PaymentFormValues } from '../PaymentFormValues';
 import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
 import { getFriend } from '../../../../application/getFriend';
-import { Amount } from '../../../../domain/Amount';
-import { Payment } from '../../../../domain/Payment';
+import { Amount } from '../../../../domain/Amount/Amount';
+import { Payment } from '../../../../domain/Payment/Payment';
 import addPayment from '../../../../application/addPayment';
 import { PaymentSessionRepositoryService } from '../../services/payment-session-repository.service';
 import { AppStore } from '../../../store/app.store';
-import CurrencyCodes from '../../../../domain/CurrencyCodes';
+import CurrencyCodes from '../../../../domain/Currency/CurrencyCodes';
 
 @Component({
   selector: 'app-add-payment-container',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Friend } from '../../../domain/Friend';
-import { FriendRepository } from '../../../domain/FriendRepository';
+import { Friend } from '../../../domain/Friend/Friend';
+import { FriendRepository } from '../../../domain/Friend/FriendRepository';
 
 const KEY_STORAGE = 'friends'
 

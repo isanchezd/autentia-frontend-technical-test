@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Friend } from '../../domain/Friend';
-import { Payment } from '../../domain/Payment';
+import { Friend } from '../../domain/Friend/Friend';
+import { Payment } from '../../domain/Payment/Payment';
 
 interface StateProps {
   friends: Friend[],

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Payment } from '../../../../domain/Payment';
+import { Payment } from '../../../../domain/Payment/Payment';
 import { FullnamePipe } from '../../../Common/pipes/fullname.pipe';
 import { AmountPipe } from '../../../Common/pipes/amount.pipe';
 import { PaymentDatePipe } from '../../../Common/pipes/payment-date.pipe';

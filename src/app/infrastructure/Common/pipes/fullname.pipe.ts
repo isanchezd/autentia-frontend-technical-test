@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Friend } from '../../../domain/Friend';
+import { Friend } from '../../../domain/Friend/Friend';
 
 @Pipe({
   name: 'fullname',

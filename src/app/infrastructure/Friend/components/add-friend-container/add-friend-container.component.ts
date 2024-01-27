@@ -4,7 +4,7 @@ import { AddFriendFormComponent } from '../add-friend-form/add-friend-form.compo
 import { FormControlStatus } from '@angular/forms';
 import { addFriend } from '../../../../application/addFriend';
 import { FriendSessionRepositoryService } from '../../services/friend-session-repository.service';
-import { Friend } from '../../../../domain/Friend';
+import { Friend } from '../../../../domain/Friend/Friend';
 import { FORM_STATUS } from '../../../Common/enums/FormStatus';
 import { AppStore } from '../../../store/app.store';
 

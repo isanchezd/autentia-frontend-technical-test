@@ -4,7 +4,7 @@ import { getErrorMessage } from '../../../Common/helpers/form';
 import { Subject, distinctUntilChanged, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { PaymentFormValues } from '../PaymentFormValues';
-import { Friend } from '../../../../domain/Friend';
+import { Friend } from '../../../../domain/Friend/Friend';
 import { getFriends } from '../../../../application/getFriends';
 import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
 

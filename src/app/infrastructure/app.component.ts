@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { PaymentViewComponent } from './Payment/view/payment-view/payment-view.component';
+import { PaymentViewComponent } from './Payment/views/payment-view/payment-view.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { AppStore } from './store/app.store';
 import { getFriends } from '../application/getFriends';

@@ -3,21 +3,21 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BalanceViewComponent } from './balance-view.component';
 
 describe('BalanceViewComponent', () => {
-  let component: BalanceViewComponent;
-  let fixture: ComponentFixture<BalanceViewComponent>;
+    let component: BalanceViewComponent;
+    let fixture: ComponentFixture<BalanceViewComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [BalanceViewComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(BalanceViewComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [BalanceViewComponent]
+        })
+            .compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+        fixture = TestBed.createComponent(BalanceViewComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

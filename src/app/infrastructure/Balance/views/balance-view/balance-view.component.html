@@ -1,7 +1,7 @@
-<div class="center-x" *ngIf="balances.length > 0; else elseBlock">
-  <app-balance-list [balances]="balances"/>
+<div class="center-x">
+    @if (balances.length > 0) {
+        <app-balance-list [balances]="balances" />
+    } @else {
+        <div class="">No Balance exist</div>
+    }
 </div>
-
-<ng-template #elseBlock>
-  <div class="">No Balance exist</div>
-</ng-template>

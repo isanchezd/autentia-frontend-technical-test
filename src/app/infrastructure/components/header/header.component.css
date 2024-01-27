@@ -1,7 +1,7 @@
 .header {
-  grid-area: header;
+    grid-area: header;
 }
 
 .header__background-color {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }

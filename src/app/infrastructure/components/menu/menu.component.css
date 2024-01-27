@@ -1,15 +1,13 @@
 .menu {
-  display:flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .element {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .actions {
-  display:flex;
-  gap: 0.2rem;
+    display: flex;
+    gap: 0.2rem;
 }
-
-

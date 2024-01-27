@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Balance } from '../../../../domain/Balance';
+import { Balance } from '../../../../domain/Balance/Balance';
 import { CommonModule } from '@angular/common';
 import { FullnamePipe } from '../../../Common/pipes/fullname.pipe';
 import { AmountPipe } from '../../../Common/pipes/amount.pipe';

@@ -1,5 +1,5 @@
-import { Payment } from "../domain/Payment";
-import { PaymentRepository } from "../domain/PaymentRepository";
+import { Payment } from "../domain/Payment/Payment";
+import { PaymentRepository } from "../domain/Payment/PaymentRepository";
 
 export function getPayments(paymentsRepository: PaymentRepository) {
   const payments = paymentsRepository.getPayments();

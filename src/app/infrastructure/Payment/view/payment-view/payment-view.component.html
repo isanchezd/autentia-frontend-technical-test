@@ -1,7 +1,0 @@
-<div class="center-x" *ngIf="payments.length > 0; else elseBlock">
-  <app-payment-list [payments]="payments"/>
-</div>
-
-<ng-template #elseBlock>
-  <div class="">No payments registered</div>
-</ng-template>

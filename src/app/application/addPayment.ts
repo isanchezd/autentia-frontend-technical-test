@@ -1,5 +1,5 @@
-import { Payment } from "../domain/Payment";
-import { PaymentRepository } from "../domain/PaymentRepository";
+import { Payment } from "../domain/Payment/Payment";
+import { PaymentRepository } from "../domain/Payment/PaymentRepository";
 
 export default function addPayment(repository: PaymentRepository, payment: Payment ) {
   const id = new Date().getTime();
