@@ -1,5 +1,5 @@
-import { Friend } from "../domain/Friend";
-import { FriendRepository } from "../domain/FriendRepository";
+import { Friend } from "../domain/Friend/Friend";
+import { FriendRepository } from "../domain/Friend/FriendRepository";
 
 export function addFriend(friend: Friend, friendRepository: FriendRepository) {
   const id = new Date().getTime();

@@ -1,73 +1,73 @@
 .bg-primary {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 
 .bg-secondary {
-  background-color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
 
 .bg-neutral {
-  background-color: var(--color-grey);
+    background-color: var(--color-grey);
 }
 
 .color-light {
-  color: #FFF;
+    color: #fff;
 }
 
 .color-dark {
-  color: #000;
+    color: #000;
 }
 
 .success {
-  color: var(--color-success);
+    color: var(--color-success);
 }
 
 .danger {
-  color: var(--color-danger);
+    color: var(--color-danger);
 }
 
 .primary {
-  color: #fff;
-  border-color: var(--color-secondary);
-  background-color: var(--color-secondary);
+    color: #fff;
+    border-color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
 .primary:hover,
 .primary:focus {
-  color: #fff;
-  border-color: var(--color-secondary);
-  background-color: var(--color-secondary);
+    color: #fff;
+    border-color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
 .primary:disabled {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  pointer-events: none;
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    pointer-events: none;
 }
 
-
 .error input {
-  color: var(--color-danger);
+    color: var(--color-danger);
 }
 
 .error input::placeholder {
-  color: var(--color-danger);
+    color: var(--color-danger);
 }
 
 .error span {
-  color: var(--color-danger);
+    color: var(--color-danger);
 }
 
 .error label {
-  color: var(--color-danger);
+    color: var(--color-danger);
 }
 
 .error select {
-  border: 1px solid var(--color-danger);
-  color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+    color: var(--color-danger);
 }
 
-.border, .border-y, .border-x {
-  border: 1px solid #ccc;
-  border-radius: 30px;
+.border,
+.border-y,
+.border-x {
+    border: 1px solid #ccc;
+    border-radius: 30px;
 }
-

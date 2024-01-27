@@ -1,5 +1,5 @@
 import { Amount } from "./Amount";
-import CurrencyCodes from "./CurrencyCodes";
+import CurrencyCodes from "../Currency/CurrencyCodes";
 
 
 describe('Amount', () => {

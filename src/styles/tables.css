@@ -1,7 +1,7 @@
 .table {
-  table-layout: fixed;
+    table-layout: fixed;
 }
 
 .table tbody tr:nth-child(odd) {
-  background-color: #DDD;
+    background-color: #ddd;
 }

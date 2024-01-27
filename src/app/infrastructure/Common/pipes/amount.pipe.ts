@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Amount } from '../../../domain/Amount';
-import CurrencySymbols from '../../../domain/CurrencySymbols';
+import { Amount } from '../../../domain/Amount/Amount';
+import CurrencySymbols from '../../../domain/Currency/CurrencySymbols';
 
 @Pipe({
   name: 'amount',

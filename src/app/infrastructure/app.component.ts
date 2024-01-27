@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { PaymentViewComponent } from './Payment/view/payment-view/payment-view.component';
+import { PaymentViewComponent } from './Payment/views/payment-view/payment-view.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { AppStore } from './store/app.store';
 import { getFriends } from '../application/getFriends';
@@ -17,8 +17,20 @@ import { BalanceViewComponent } from './Balance/views/balance-view/balance-view.
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent, MenuComponent, PaymentViewComponent, BalanceViewComponent, ModalComponent],
   providers: [AppStore],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  template: `
+    <section class="app-layout">
+        <app-header class="header bg-primary" />
+        <main class="main">
+            <app-menu class="container" />
+            <section class="container">
+                <router-outlet />
+            </section>
+        </main>
+        <app-footer class="footer bg-primary" />
+    </section>
+    <app-modal />
+  `
 })
 export class AppComponent implements OnInit {
 

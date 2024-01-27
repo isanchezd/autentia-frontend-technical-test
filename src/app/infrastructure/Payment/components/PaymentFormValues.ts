@@ -1,5 +1,5 @@
 export interface PaymentFormValues {
-  friend: string,
-  amount: string,
-  description: string
+    friend: string,
+    amount: string,
+    description: string
 }

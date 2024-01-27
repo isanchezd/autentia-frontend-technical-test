@@ -1,8 +1,8 @@
-import { FriendRepository } from "../domain/FriendRepository";
-import { PaymentRepository } from "../domain/PaymentRepository";
-import { Balance } from "../domain/Balance";
-import CurrencyCodes from "../domain/CurrencyCodes";
-import { Amount } from "../domain/Amount";
+import { FriendRepository } from "../domain/Friend/FriendRepository";
+import { PaymentRepository } from "../domain/Payment/PaymentRepository";
+import { Balance } from "../domain/Balance/Balance";
+import CurrencyCodes from "../domain/Currency/CurrencyCodes";
+import { Amount } from "../domain/Amount/Amount";
 
 
 export default function getBalances(paymentRepository: PaymentRepository, friendRepository: FriendRepository): Balance[] {

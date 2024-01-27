@@ -13,8 +13,26 @@ const friendFormConfig = {
   selector: 'app-add-friend-form',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './add-friend-form.component.html',
-  styleUrl: './add-friend-form.component.css'
+  styleUrl: './add-friend-form.component.css',
+  template: `
+    <form method="dialog" class="form" [formGroup]="friendForm">
+        <div class="form-group" [ngClass]="{'error': friendForm.get('name')?.invalid && friendForm.get('name')?.touched }">
+            <label>Name (*)</label>
+            <input type="text" id="name" formControlName="name" placeholder="Jude"/>
+            @if(friendForm.get('name')?.invalid && friendForm.get('name')?.touched) {
+                <span>{{getErrorMessage(friendForm.get('name')?.errors)}}</span>
+            }
+        </div>
+
+        <div class="form-group" [ngClass]="{'error' : friendForm.get('lastname')?.invalid && friendForm.get('lastname')?.touched }">
+            <label>Lastname (*)</label>
+            <input type="text" id="lastname" formControlName="lastname" placeholder="Bellingham"/>
+            @if(friendForm.get('lastname')?.invalid && friendForm.get('lastname')?.touched) {
+                <span>{{getErrorMessage(friendForm.get('lastname')?.errors)}}</span>
+            }
+        </div>
+    </form>
+    `
 })
 export class AddFriendFormComponent implements OnInit, OnDestroy {
   @Output() onFormStatusChange: EventEmitter<FormControlStatus> = new EventEmitter<FormControlStatus>();

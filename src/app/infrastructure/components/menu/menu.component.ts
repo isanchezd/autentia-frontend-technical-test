@@ -6,34 +6,44 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-menu',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css'
+    selector: 'app-menu',
+    standalone: true,
+    imports: [CommonModule],
+    styleUrl: './menu.component.css',
+    template: `
+    <section class="menu">
+        <div class="actions">
+            @if(currentRoute !== '/balance') {
+                <button class="button primary" (click)="onClickSeeBalance()">Ver balance</button>
+            } @if(currentRoute === '/balance') {
+                <button class="button primary" (click)="onClickSeePayments()">Ver Pagos</button>
+            }
+            <button class="button primary" (click)="onClickAddPayment()">Añadir Gastos</button>
+            <button class="button primary" (click)="onClickAddFriend()">Añadir Amigo</button>
+        </div>
+    </section>`,
 })
 export class MenuComponent {
 
+    constructor(private _modalVisibilityHandler: ModalVisibilityHandlerService, private _router: Router) { }
 
-  constructor(private _modalVisibilityHandler: ModalVisibilityHandlerService, private _router: Router) {}
+    public get currentRoute() {
+        return this._router.url
+    }
 
-  public get currentRoute() {
-    return this._router.url
-  }
+    public onClickAddFriend() {
+        this._modalVisibilityHandler.show(AddFriendContainerComponent);
+    }
 
-  public onClickAddFriend() {
-    this._modalVisibilityHandler.show(AddFriendContainerComponent);
-  }
+    public onClickAddPayment() {
+        this._modalVisibilityHandler.show(AddPaymentContainerComponent);
+    }
 
-  public onClickAddPayment() {
-    this._modalVisibilityHandler.show(AddPaymentContainerComponent);
-  }
+    public onClickSeeBalance() {
+        this._router.navigateByUrl('/balance');
+    }
 
-  public onClickSeeBalance() {
-    this._router.navigateByUrl('/balance');
-  }
-
-  public onClickSeePayments() {
-    this._router.navigateByUrl('/');
-  }
+    public onClickSeePayments() {
+        this._router.navigateByUrl('/');
+    }
 }
