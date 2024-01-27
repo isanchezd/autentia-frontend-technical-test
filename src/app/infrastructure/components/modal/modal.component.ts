@@ -8,8 +8,12 @@ import { AddFriendContainerComponent } from '../../Friend/components/add-friend-
     selector: 'app-modal',
     standalone: true,
     imports: [AddFriendContainerComponent],
-    templateUrl: './modal.component.html',
-    styleUrl: './modal.component.css'
+    styleUrl: './modal.component.css',
+    template: `
+        <dialog [attr.open]="show ? 'open' : null" class="modal">
+            <div #container></div>
+        </dialog>
+    `
 })
 export class ModalComponent implements OnInit {
     @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;

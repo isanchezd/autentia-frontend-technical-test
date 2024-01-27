@@ -4,9 +4,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
     selector: 'app-header',
     standalone: true,
     imports: [],
-    templateUrl: './header.component.html',
     styleUrl: './header.component.css',
+    template: `
+        <h1>Yep</h1>
+    `,
 })
-export class HeaderComponent {
-
-}
+export class HeaderComponent {}

@@ -17,8 +17,20 @@ import { BalanceViewComponent } from './Balance/views/balance-view/balance-view.
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent, MenuComponent, PaymentViewComponent, BalanceViewComponent, ModalComponent],
   providers: [AppStore],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  template: `
+    <section class="app-layout">
+        <app-header class="header bg-primary" />
+        <main class="main">
+            <app-menu class="container" />
+            <section class="container">
+                <router-outlet />
+            </section>
+        </main>
+        <app-footer class="footer bg-primary" />
+    </section>
+    <app-modal />
+  `
 })
 export class AppComponent implements OnInit {
 

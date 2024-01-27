@@ -9,8 +9,19 @@ import { CommonModule } from '@angular/common';
     selector: 'app-menu',
     standalone: true,
     imports: [CommonModule],
-    templateUrl: './menu.component.html',
-    styleUrl: './menu.component.css'
+    styleUrl: './menu.component.css',
+    template: `
+    <section class="menu">
+        <div class="actions">
+            @if(currentRoute !== '/balance') {
+                <button class="button primary" (click)="onClickSeeBalance()">Ver balance</button>
+            } @if(currentRoute === '/balance') {
+                <button class="button primary" (click)="onClickSeePayments()">Ver Pagos</button>
+            }
+            <button class="button primary" (click)="onClickAddPayment()">Añadir Gastos</button>
+            <button class="button primary" (click)="onClickAddFriend()">Añadir Amigo</button>
+        </div>
+    </section>`,
 })
 export class MenuComponent {
 

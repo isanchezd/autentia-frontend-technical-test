@@ -7,12 +7,25 @@ import { FriendSessionRepositoryService } from '../../../Friend/services/friend-
 import { BalanceListComponent } from '../../components/balance-list/balance-list.component';
 import { CommonModule } from '@angular/common';
 
+
+
+
+
+
+
 @Component({
     selector: 'app-balance-view',
     standalone: true,
     imports: [CommonModule, BalanceListComponent],
-    templateUrl: './balance-view.component.html',
-    styleUrl: './balance-view.component.css'
+    template: `
+        <div class="center-x">
+            @if (balances.length > 0) {
+                <app-balance-list [balances]="balances" />
+            } @else {
+                <div class="">No Balance exist</div>
+            }
+        </div>
+    `,
 })
 export class BalanceViewComponent {
     private _balances: Balance[]

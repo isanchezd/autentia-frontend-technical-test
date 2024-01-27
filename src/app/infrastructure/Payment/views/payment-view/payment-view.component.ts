@@ -11,8 +11,16 @@ import { getPayments } from '../../../../application/getPayments';
   standalone: true,
   imports: [CommonModule, PaymentListComponent],
   providers: [],
-  templateUrl: './payment-view.component.html',
-  styleUrl: './payment-view.component.css'
+  styleUrl: './payment-view.component.css',
+  template: `
+    <div class="center-x">
+        @if(payments.length > 0) {
+            <app-payment-list [payments]="payments" />
+        } @else {
+            <div class="">No payments registered</div>
+        }
+    </div>
+  `
 })
 export class PaymentViewComponent implements OnInit {
     private _payments: Payment[] = [];

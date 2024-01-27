@@ -14,50 +14,70 @@ import { AppStore } from '../../../store/app.store';
 import CurrencyCodes from '../../../../domain/Currency/CurrencyCodes';
 
 @Component({
-  selector: 'app-add-payment-container',
-  standalone: true,
-  imports: [AddPaymentFormComponent],
-  providers: [],
-  templateUrl: './add-payment-container.component.html',
-  styleUrl: './add-payment-container.component.css'
+    selector: 'app-add-payment-container',
+    standalone: true,
+    imports: [AddPaymentFormComponent],
+    providers: [],
+    styleUrl: './add-payment-container.component.css',
+    template: `
+        <header class="modal-header bg-primary color-light">
+            <h4>Add Payment</h4>
+        </header>
+        <section>
+            <app-add-payment-form
+                (onFormStatusChange)="onFormStatusChange($event)"
+                (onValuesChange)="onValuesChange($event)"
+            />
+        </section>
+        <footer class="modal-footer">
+            <button class="button" (click)="onCancel()">Cancelar</button>
+            <button
+                class="button primary"
+                (click)="onAccept()"
+                [attr.disabled]="isFormValid ? null : ''"
+            >
+                OK
+            </button>
+        </footer>
+    `
 })
 export class AddPaymentContainerComponent {
-  private _formStatus: string;
-  private _formValues!: PaymentFormValues;
+    private _formStatus: string;
+    private _formValues!: PaymentFormValues;
 
-  constructor(private _modalvisibilityHandler: ModalVisibilityHandlerService, private _store: AppStore) {
-    this._formStatus = FORM_STATUS.INVALID;
-  }
-
-  public get isFormValid(): boolean {
-    return this._formStatus === FORM_STATUS.VALID;
-  }
-
-  public onCancel(): void {
-    this._modalvisibilityHandler.hide();
-  }
-
-  public onAccept(): void {
-    if (this._formStatus === FORM_STATUS.VALID) {
-      const friend = getFriend(new FriendSessionRepositoryService(), Number(this._formValues.friend));
-      if (!friend) {
-        console.error('Not Friend encountered')
-        return;
-      }
-      const id = new Date().getTime();
-      const amount = new Amount(Number(this._formValues.amount), CurrencyCodes.EUR);
-      const payment = new Payment(id, friend, amount, this._formValues.description, new Date().getTime())
-      this._store.addPayment(addPayment(new PaymentSessionRepositoryService(), payment))
-      this._modalvisibilityHandler.hide();
+    constructor(private _modalvisibilityHandler: ModalVisibilityHandlerService, private _store: AppStore) {
+        this._formStatus = FORM_STATUS.INVALID;
     }
-  }
 
-  public onFormStatusChange(formStatus: FormControlStatus) {
-    this._formStatus = formStatus
-  }
+    public get isFormValid(): boolean {
+        return this._formStatus === FORM_STATUS.VALID;
+    }
 
-  public onValuesChange(formValues: PaymentFormValues) {
-    this._formValues = { ...formValues }
-  }
+    public onCancel(): void {
+        this._modalvisibilityHandler.hide();
+    }
+
+    public onAccept(): void {
+        if (this._formStatus === FORM_STATUS.VALID) {
+            const friend = getFriend(new FriendSessionRepositoryService(), Number(this._formValues.friend));
+            if (!friend) {
+                console.error('Not Friend encountered')
+                return;
+            }
+            const id = new Date().getTime();
+            const amount = new Amount(Number(this._formValues.amount), CurrencyCodes.EUR);
+            const payment = new Payment(id, friend, amount, this._formValues.description, new Date().getTime())
+            this._store.addPayment(addPayment(new PaymentSessionRepositoryService(), payment))
+            this._modalvisibilityHandler.hide();
+        }
+    }
+
+    public onFormStatusChange(formStatus: FormControlStatus) {
+        this._formStatus = formStatus
+    }
+
+    public onValuesChange(formValues: PaymentFormValues) {
+        this._formValues = { ...formValues }
+    }
 
 }
