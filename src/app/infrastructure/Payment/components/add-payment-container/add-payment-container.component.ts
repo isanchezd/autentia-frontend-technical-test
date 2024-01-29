@@ -21,7 +21,7 @@ import CurrencyCodes from '../../../../domain/Currency/CurrencyCodes';
     styleUrl: './add-payment-container.component.css',
     template: `
         <header class="modal-header bg-primary color-light">
-            <h4>Add Payment</h4>
+            <h2 class="h5">Add Payment</h2>
         </header>
         <section>
             <app-add-payment-form
