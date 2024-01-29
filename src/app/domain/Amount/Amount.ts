@@ -4,11 +4,11 @@ export class Amount {
 
   constructor(amount: number, currency: string) {
     if(!isValidAmount(amount)) {
-      throw new Error('Invalid amount');
+      throw new Error('Invalid Amount');
     }
 
     if(!isValidCurrency(currency)) {
-      throw new Error('Invalid currency');
+      throw new Error('Invalid Currency');
     }
 
     this.amount = amount;
