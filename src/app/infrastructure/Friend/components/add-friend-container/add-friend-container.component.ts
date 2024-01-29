@@ -17,7 +17,7 @@ import { AppStore } from '../../../store/app.store';
     styleUrl: './add-friend-container.component.css',
     template: `
         <header class="modal-header bg-primary color-light">
-            <h4>Add Friend</h4>
+            <h2 class="h5">Add Friend</h2>
         </header>
         <section>
             <app-add-friend-form

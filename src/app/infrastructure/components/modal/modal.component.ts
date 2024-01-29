@@ -10,7 +10,7 @@ import { AddFriendContainerComponent } from '../../Friend/components/add-friend-
     imports: [AddFriendContainerComponent],
     styleUrl: './modal.component.css',
     template: `
-        <dialog [attr.open]="show ? 'open' : null" class="modal">
+        <dialog [attr.open]="show ? 'open' : null" class="modal border">
             <div #container></div>
         </dialog>
     `
