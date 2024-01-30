@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ModalVisibilityHandlerService } from '../../../services/modal-visibility-handler.service';
 import { AddFriendFormComponent } from '../add-friend-form/add-friend-form.component';
 import { FormControlStatus } from '@angular/forms';
-import { addFriend } from '../../../../application/addFriend';
+import addFriend from '../../../../application/addFriend';
 import { FriendSessionRepositoryService } from '../../services/friend-session-repository.service';
 import { Friend } from '../../../../domain/Friend/Friend';
 import { FORM_STATUS } from '../../../Common/enums/FormStatus';
