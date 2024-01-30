@@ -1,8 +1,8 @@
-import CurrencyCodes from "../domain/Currency/CurrencyCodes"
-import { Friend } from "../domain/Friend/Friend"
-import { FriendRepository } from "../domain/Friend/FriendRepository"
-import { Payment } from "../domain/Payment/Payment"
-import { PaymentRepository } from "../domain/Payment/PaymentRepository"
+import CurrencyCodes from "../../domain/Currency/CurrencyCodes"
+import { Friend } from "../../domain/Friend/Friend"
+import { FriendRepository } from "../../domain/Friend/FriendRepository"
+import { Payment } from "../../domain/Payment/Payment"
+import { PaymentRepository } from "../../domain/Payment/PaymentRepository"
 import getBalance from "./getBalance"
 
 
@@ -79,8 +79,8 @@ describe('Get Balance use case', () => {
         spyOn(mockPaymentRepository, 'getPayments').and.returnValue([...mockPayments]);
         spyOn(mockFriendRepository, 'getFriends').and.returnValue([{...mockFriend}]);
 
-        getBalance(mockPaymentRepository, mockFriendRepository,);
-        expect(mockPaymentRepository.getPayments).toHaveBeenCalledWith();
+        getBalance(mockPaymentRepository, mockFriendRepository);
+        expect(mockPaymentRepository.getPayments).toHaveBeenCalled();
         expect(mockFriendRepository.getFriends).toHaveBeenCalled();
     })
 

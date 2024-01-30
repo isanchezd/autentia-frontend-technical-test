@@ -1,5 +1,5 @@
-import { Friend } from "../domain/Friend/Friend";
-import { FriendRepository } from "../domain/Friend/FriendRepository";
+import { Friend } from "../../domain/Friend/Friend";
+import { FriendRepository } from "../../domain/Friend/FriendRepository";
 import getFriend from "./getFriend";
 
 describe('Get Friend use case', () => {

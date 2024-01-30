@@ -1,8 +1,8 @@
-import { Amount } from "../domain/Amount/Amount"
-import CurrencyCodes from "../domain/Currency/CurrencyCodes"
-import { Payment } from "../domain/Payment/Payment"
-import { PaymentRepository } from "../domain/Payment/PaymentRepository"
-import { Friend } from "../domain/Friend/Friend"
+import { Amount } from "../../domain/Amount/Amount"
+import CurrencyCodes from "../../domain/Currency/CurrencyCodes"
+import { Payment } from "../../domain/Payment/Payment"
+import { PaymentRepository } from "../../domain/Payment/PaymentRepository"
+import { Friend } from "../../domain/Friend/Friend"
 import { getPayments } from "./getPayments"
 
 describe('Get Payment use case', () => {

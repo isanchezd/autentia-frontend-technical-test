@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Balance } from '../../../../domain/Balance/Balance';
-import getBalance from '../../../../application/getBalance';
+import getBalance from '../../../../application/Balance/getBalance';
 import { PaymentSessionRepositoryService } from '../../../Payment/services/payment-session-repository.service';
 import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
 import { BalanceListComponent } from '../../components/balance-list/balance-list.component';
