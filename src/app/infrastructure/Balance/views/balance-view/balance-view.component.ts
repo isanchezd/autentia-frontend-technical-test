@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Balance } from '../../../../domain/Balance/Balance';
-import getBalance from '../../../../application/getBalances';
-import getBalances from '../../../../application/getBalances';
+import getBalance from '../../../../application/getBalance';
 import { PaymentSessionRepositoryService } from '../../../Payment/services/payment-session-repository.service';
 import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
 import { BalanceListComponent } from '../../components/balance-list/balance-list.component';
@@ -39,6 +38,6 @@ export class BalanceViewComponent {
     }
 
     public ngOnInit() {
-        this._balances = getBalances(new PaymentSessionRepositoryService(), new FriendSessionRepositoryService())
+        this._balances = getBalance(new PaymentSessionRepositoryService(), new FriendSessionRepositoryService())
     }
 }
