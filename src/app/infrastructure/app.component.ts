@@ -6,7 +6,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { PaymentViewComponent } from './Payment/views/payment-view/payment-view.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { AppStore } from './store/app.store';
-import { getFriends } from '../application/getFriends';
+import getFriends from '../application/getFriends';
 import { FriendSessionRepositoryService } from './Friend/services/friend-session-repository.service';
 import { getPayments } from '../application/getPayments';
 import { PaymentSessionRepositoryService } from './Payment/services/payment-session-repository.service';
