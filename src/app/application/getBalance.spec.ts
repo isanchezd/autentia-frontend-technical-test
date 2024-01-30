@@ -6,7 +6,7 @@ import { PaymentRepository } from "../domain/Payment/PaymentRepository"
 import getBalance from "./getBalance"
 
 
-describe('GetBalanceUseCase', () => {
+describe('Get Balance use case', () => {
     const mockFriend: Friend = {
         id: 1,
         name: 'Pepe',
@@ -50,7 +50,7 @@ describe('GetBalanceUseCase', () => {
             description: 'yep',
             transactionDate: 14
         }
-    ]
+    ];
 
     const mockPaymentRepository: PaymentRepository = {
         getPayments() {
@@ -59,7 +59,7 @@ describe('GetBalanceUseCase', () => {
         addPayment(payment: Payment) {
             return payment
         }
-    }
+    };
 
     const mockFriendRepository: FriendRepository = {
         getFriend() {
@@ -73,7 +73,7 @@ describe('GetBalanceUseCase', () => {
         getFriends() {
             return [{...mockFriend}]
         }
-    }
+    };
 
     it('When getBalance is called, should be get the balance list of the payments and users', () => {
         spyOn(mockPaymentRepository, 'getPayments').and.returnValue([...mockPayments]);

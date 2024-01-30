@@ -5,7 +5,7 @@ import { ModalVisibilityHandlerService } from '../../../services/modal-visibilit
 import { FORM_STATUS } from '../../../Common/enums/FormStatus';
 import { PaymentFormValues } from '../PaymentFormValues';
 import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
-import { getFriend } from '../../../../application/getFriend';
+import getFriend from '../../../../application/getFriend';
 import { Amount } from '../../../../domain/Amount/Amount';
 import { Payment } from '../../../../domain/Payment/Payment';
 import addPayment from '../../../../application/addPayment';
