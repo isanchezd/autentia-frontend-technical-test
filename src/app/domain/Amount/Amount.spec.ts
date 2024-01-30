@@ -2,7 +2,7 @@ import { Amount } from "./Amount";
 import CurrencyCodes from "../Currency/CurrencyCodes";
 
 
-describe('Amount', () => {
+describe('Amount Domain', () => {
     it('Should be created', () => {
         const amount = new Amount(56.73, CurrencyCodes.EUR)
         expect(amount).toBeTruthy();

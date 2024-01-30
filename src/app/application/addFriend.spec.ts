@@ -8,7 +8,7 @@ const mockFriend = {
     lastname: 'Juaonlas'
 }
 
-describe('AddFriendUseCase', () => {
+describe('Add Friend use case', () => {
     const friendRepository: FriendRepository = {
         getFriends(): Friend [] {
             return [{

@@ -5,7 +5,7 @@ import { Payment } from "../domain/Payment/Payment";
 import { PaymentRepository } from "../domain/Payment/PaymentRepository";
 import addPayment from "./addPayment";
 
-describe('AddPaymentUseCase', () => {
+describe('Add Payment use case', () => {
 
     it('When addPayment is called, should be called with a payment', () => {
         const mockPayment = new Payment(1, new Friend(1, 'Pepe', 'Lastname'), new Amount(25, CurrencyCodes.EUR), '', 16)

@@ -5,7 +5,7 @@ import { PaymentRepository } from "../domain/Payment/PaymentRepository"
 import { Friend } from "../domain/Friend/Friend"
 import { getPayments } from "./getPayments"
 
-describe('GetPaymentsUseCase', () => {
+describe('Get Payment use case', () => {
 
   it('When the repository returns empty payments the length of payments should be 0', () => {
     const mockPaymentRepository: PaymentRepository = {
