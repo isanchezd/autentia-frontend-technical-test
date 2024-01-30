@@ -5,7 +5,7 @@ import CurrencyCodes from "../domain/Currency/CurrencyCodes";
 import { Amount } from "../domain/Amount/Amount";
 
 
-export default function getBalances(paymentRepository: PaymentRepository, friendRepository: FriendRepository): Balance[] {
+export default function getBalance(paymentRepository: PaymentRepository, friendRepository: FriendRepository): Balance[] {
     const payments = paymentRepository.getPayments();
     const friends = friendRepository.getFriends();
 
