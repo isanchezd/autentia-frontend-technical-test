@@ -1,71 +1,40 @@
-import { Amount } from "../domain/Amount/Amount"
-import CurrencyCodes from "../domain/Currency/CurrencyCodes"
 import { Friend } from "../domain/Friend/Friend"
-import { Payment } from "../domain/Payment/Payment"
-import { PaymentRepository } from "../domain/Payment/PaymentRepository"
-import { getPayments } from "./getPayments"
+import { FriendRepository } from "../domain/Friend/FriendRepository";
+import addFriend from "./addFriend";
+
+const mockFriend = {
+    id: 1,
+    name: 'Pepe',
+    lastname: 'Juaonlas'
+}
 
 describe('AddFriendUseCase', () => {
-
-    it('When the repository returns empty payments the length of payments should be 0', () => {
-        const mockPaymentRepository: PaymentRepository = {
-            getPayments() {
-                return []
-            },
-            addPayment(payment: Payment) {
-                return payment
+    const friendRepository: FriendRepository = {
+        getFriends(): Friend [] {
+            return [{
+                ...mockFriend
+            }]
+        },
+        addFriend(friend: Friend): Friend {
+            return friend
+        },
+        getFriend(id: number) : Friend {
+            return {
+                ...mockFriend
             }
         }
-        const payments = getPayments(mockPaymentRepository)
-        expect(payments.length).toBe(0)
+    }
+
+
+    it('When addFriend is called, should be called with a friend', () => {
+        const mockFriendRepository = {
+            ...friendRepository
+        }
+
+
+        spyOn(mockFriendRepository, 'addFriend');
+         addFriend(mockFriend, mockFriendRepository);
+        expect(mockFriendRepository.addFriend).toHaveBeenCalledWith(mockFriend);
     })
 
-    it('When the repository returns payments the length of payments should greather than 0', () => {
-        const mockPaymentRepository: PaymentRepository = {
-            getPayments() {
-                return [
-                    new Payment(
-                        1,
-                        new Friend(new Date().getTime(), 'Iván', 'Sanchez'),
-                        new Amount(5.74, CurrencyCodes.EUR), 'Test',
-                        new Date().getTime()
-                    )
-                ]
-            },
-            addPayment(payment: Payment) {
-                return payment
-            }
-        };
-
-        const payments = getPayments(mockPaymentRepository)
-
-        expect(payments.length).toBe(1)
-    })
-
-    it('When the repository returns payment, the order of the items should be ordered', () => {
-        const mockPaymentRepository: PaymentRepository = {
-            getPayments() {
-                return [
-                    new Payment(
-                        1,
-                        new Friend(new Date().getTime(), 'Iván', 'Sanchez'),
-                        new Amount(5.74, CurrencyCodes.EUR), 'Test',
-                        1705776752
-                    ),
-                    new Payment(
-                        2,
-                        new Friend(new Date().getTime(), 'Iván', 'Sanchez'),
-                        new Amount(5.74, CurrencyCodes.EUR), 'Test',
-                        1674237110)
-                ]
-            },
-            addPayment(payment: Payment) {
-                return payment
-            }
-        };
-
-        const payments = getPayments(mockPaymentRepository)
-
-        expect(payments[0].id).toBe(1)
-    })
 })
