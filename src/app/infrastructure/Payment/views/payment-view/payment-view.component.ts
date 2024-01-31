@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppStore } from '../../../store/app.store';
 import { PaymentListComponent } from '../../components/payment-list/payment-list.component';
 import { PaymentSessionRepositoryService } from '../../services/payment-session-repository.service';
-import { getPayments } from '../../../../application/getPayments';
+import { getPayments } from '../../../../application/Payment/getPayments';
 
 @Component({
   selector: 'app-payment-view',

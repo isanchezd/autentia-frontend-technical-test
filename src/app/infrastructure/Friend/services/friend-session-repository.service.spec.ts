@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FriendRepositoryService } from './friend-session-repository.service';
+import { FriendSessionRepositoryService } from './friend-session-repository.service';
 
 describe('FriendRepositoryService', () => {
-  let service: FriendRepositoryService;
+    let service: FriendSessionRepositoryService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(FriendRepositoryService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({ providers: [FriendSessionRepositoryService] });
+        service = TestBed.inject(FriendSessionRepositoryService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(service).toBeTruthy();
+    });
 });

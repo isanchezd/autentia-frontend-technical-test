@@ -5,10 +5,10 @@ import { ModalVisibilityHandlerService } from '../../../services/modal-visibilit
 import { FORM_STATUS } from '../../../Common/enums/FormStatus';
 import { PaymentFormValues } from '../PaymentFormValues';
 import { FriendSessionRepositoryService } from '../../../Friend/services/friend-session-repository.service';
-import { getFriend } from '../../../../application/getFriend';
+import getFriend from '../../../../application/Friend/getFriend';
 import { Amount } from '../../../../domain/Amount/Amount';
 import { Payment } from '../../../../domain/Payment/Payment';
-import addPayment from '../../../../application/addPayment';
+import addPayment from '../../../../application/Payment/addPayment';
 import { PaymentSessionRepositoryService } from '../../services/payment-session-repository.service';
 import { AppStore } from '../../../store/app.store';
 import CurrencyCodes from '../../../../domain/Currency/CurrencyCodes';
@@ -61,13 +61,13 @@ export class AddPaymentContainerComponent {
         if (this._formStatus === FORM_STATUS.VALID) {
             const friend = getFriend(new FriendSessionRepositoryService(), Number(this._formValues.friend));
             if (!friend) {
-                console.error('Not Friend encountered')
+                console.error('Not Friend encountered');
                 return;
             }
             const id = new Date().getTime();
             const amount = new Amount(Number(this._formValues.amount), CurrencyCodes.EUR);
-            const payment = new Payment(id, friend, amount, this._formValues.description, new Date().getTime())
-            this._store.addPayment(addPayment(new PaymentSessionRepositoryService(), payment))
+            const payment = new Payment(id, friend, amount, this._formValues.description, new Date().getTime());
+            this._store.addPayment(addPayment(payment, new PaymentSessionRepositoryService()));
             this._modalvisibilityHandler.hide();
         }
     }

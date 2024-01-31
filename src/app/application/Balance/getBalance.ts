@@ -1,11 +1,11 @@
-import { FriendRepository } from "../domain/Friend/FriendRepository";
-import { PaymentRepository } from "../domain/Payment/PaymentRepository";
-import { Balance } from "../domain/Balance/Balance";
-import CurrencyCodes from "../domain/Currency/CurrencyCodes";
-import { Amount } from "../domain/Amount/Amount";
+import { FriendRepository } from "../../domain/Friend/FriendRepository";
+import { PaymentRepository } from "../../domain/Payment/PaymentRepository";
+import { Balance } from "../../domain/Balance/Balance";
+import CurrencyCodes from "../../domain/Currency/CurrencyCodes";
+import { Amount } from "../../domain/Amount/Amount";
 
 
-export default function getBalances(paymentRepository: PaymentRepository, friendRepository: FriendRepository): Balance[] {
+export default function getBalance(paymentRepository: PaymentRepository, friendRepository: FriendRepository): Balance[] {
     const payments = paymentRepository.getPayments();
     const friends = friendRepository.getFriends();
 

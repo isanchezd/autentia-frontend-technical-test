@@ -10,19 +10,11 @@ export class Payment {
 
   constructor(id: number, friend: Friend, amount: Amount, description: string, transactionDate: number) {
     if (!isIdValid(id)) {
-      throw new Error('Id is required')
-    }
-
-    if (!isFriendValid(friend)) {
-      throw new Error('Friend has incorrect format')
-    }
-
-    if(!isAmount(amount)) {
-      throw new Error('Amount has incorrect format')
+      throw new Error('Invalid Id');
     }
 
     if (!isTransactionDate(transactionDate)) {
-      throw new Error('Transaction Date is required')
+      throw new Error('Invalid TransactionDate');
     }
 
     this.id = id;
@@ -31,23 +23,14 @@ export class Payment {
     this.description = description;
     this.transactionDate = transactionDate;
   }
-
 }
 
 function isIdValid(id: number) {
-  return id > 0
-}
-
-function isFriendValid(friend: Friend) {
-  return friend.id > 0
-}
-
-function isAmount(amount: Amount) {
-  return amount.amount > 0
+  return id > 0;
 }
 
 function isTransactionDate(transactionDate: number) {
-  return transactionDate > 0
+  return transactionDate > 0;
 }
 
 
